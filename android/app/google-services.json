@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1065180511995",
+    "project_id": "ofc-bol-8420f",
+    "storage_bucket": "ofc-bol-8420f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065180511995:android:9b938346b4909447fd3a5e",
+        "android_client_info": {
+          "package_name": "com.mycompany.catalogodeofertamaderable"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU3XDHm1oyPh3_GGsNFYb9uiQ8RlSW_zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
