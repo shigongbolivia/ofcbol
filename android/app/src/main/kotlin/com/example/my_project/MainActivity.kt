@@ -1,4 +1,4 @@
-package com.mycompany.catalogodeofertamaderable
+package com.ofc.catalogodeofertamaderable
 
 import io.flutter.embedding.android.FlutterActivity
 
