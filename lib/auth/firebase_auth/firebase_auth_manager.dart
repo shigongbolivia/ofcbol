@@ -312,7 +312,7 @@ class FirebaseAuthManager extends AuthManager
     } on FirebaseAuthException catch (e) {
       final errorMsg = switch (e.code) {
         'email-already-in-use' =>
-          'Error: The email is already in use by a different account',
+          'Error: El correo electrónico ya está en uso por otra cuenta cambiar.',
         'INVALID_LOGIN_CREDENTIALS' =>
           'Error: The supplied auth credential is incorrect, malformed or has expired',
         _ => 'Error de autenticación.',
