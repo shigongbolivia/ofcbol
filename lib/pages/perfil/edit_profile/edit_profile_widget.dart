@@ -6,10 +6,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'edit_profile_model.dart';
 export 'edit_profile_model.dart';
@@ -106,19 +108,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if ((_model.uploadedFileUrl == null ||
-                            _model.uploadedFileUrl == '') &&
-                        (currentUserPhoto == ''))
+                    if (currentUserPhoto == '')
                       AuthUserStreamWidget(
-                        builder: (context) => Container(
-                          width: 100.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFDBE2E7),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Color(0xFF73B175),
-                            ),
+                        builder: (context) => Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: Color(0xFF73B175),
+                          elevation: 2.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(2.0),
@@ -137,47 +134,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           ),
                         ),
                       ),
-                    if (_model.uploadedFileUrl != null &&
-                        _model.uploadedFileUrl != '')
-                      Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFDBE2E7),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Color(0xFF73B175),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(2.0),
-                          child: Container(
-                            width: 90.0,
-                            height: 90.0,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.network(
-                              _model.uploadedFileUrl,
-                              fit: BoxFit.fitWidth,
-                            ),
-                          ),
-                        ),
-                      ),
-                    if ((_model.uploadedFileUrl == null ||
-                            _model.uploadedFileUrl == '') &&
-                        (currentUserPhoto != ''))
+                    if (currentUserPhoto != null && currentUserPhoto != '')
                       AuthUserStreamWidget(
-                        builder: (context) => Container(
-                          width: 100.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFDBE2E7),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Color(0xFF73B175),
-                            ),
+                        builder: (context) => Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: Color(0xFF73B175),
+                          elevation: 2.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(2.0),
@@ -188,23 +152,17 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.network(
-                                currentUserPhoto,
-                                fit: BoxFit.fitWidth,
+                              child: CachedNetworkImage(
+                                fadeInDuration: Duration(milliseconds: 500),
+                                fadeOutDuration: Duration(milliseconds: 500),
+                                imageUrl: valueOrDefault<String>(
+                                  currentUserPhoto,
+                                  'CAESmANDZzVKYldGblpWOXhhMlJ1WVRZMFlSZ0hJbzRDTXNJQkNtNXdjbTlxWldOMGN5OXphRzl3Y0dsdVoyRndjQzFwYkhoc1pXOHZZWE56WlhSekwzUXljWEYwY3pBeU0yRnFZeS9pZ0pSUWJtZDBjbVZsNG9DVVkyRnlkRzl2Ymw5dFlXNWZZWFpoZEdGeVgzWmxZM1J2Y2w5cGJIVnpkSEpoZEdsdmJsODROVEUxTkRZekxuQnVaeEFDR0FNaUZnb0pDUUFBQUFBQUFFNUFFZ2tKQUFBQUFBQUFUa0FxTHdrQUFBQUFBQUJFUUJFQUFBQUFBQUJFUUJrQUFBQUFBQUJFUUNFQUFBQUFBQUJFUUNnQ01RQUFBQUFBQUVSQU1BRm85QU5hTHdrQUFBQUFBQUFBUUJFQUFBQUFBQUFBUUJrQUFBQUFBQUFBUUNFQUFBQUFBQUFBUURrQUFBQUFBQUFBUUVBQytnTUE4Z1FFQ2dJS0FQSUZDd2tBQUFBQUFBRHdQeG9BWWdDU0FRY3cyUDZDb2E4d3dnRUE=',
+                                ),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ),
-                      ),
-                    if (responsiveVisibility(
-                      context: context,
-                      phone: false,
-                    ))
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(100.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/89/600',
-                          fit: BoxFit.cover,
                         ),
                       ),
                   ],
@@ -451,8 +409,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           fontFamily: 'Poppins',
                           letterSpacing: 0.0,
                         ),
+                    keyboardType: TextInputType.phone,
                     validator: _model.customerNumberTextControllerValidator
                         .asValidator(context),
+                    inputFormatters: [_model.customerNumberMask],
                   ),
                 ),
               ),
@@ -597,7 +557,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ));
                       context.safePop();
 
-                      FFAppState().update(() {});
+                      safeSetState(() {});
                     },
                     text: 'Guardar Cambios',
                     options: FFButtonOptions(

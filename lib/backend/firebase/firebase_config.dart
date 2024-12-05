@@ -10,8 +10,8 @@ Future initFirebase() async {
             projectId: "ofc-bol-8420f",
             storageBucket: "ofc-bol-8420f.firebasestorage.app",
             messagingSenderId: "1065180511995",
-            appId: "1:1065180511995:web:3715dd61abbb97befd3a5e",
-            measurementId: "G-X6TSNEK76E"));
+            appId: "1:1065180511995:web:c4dfc80f182e3856fd3a5e",
+            measurementId: "G-D4EMF8WWGR"));
   } else {
     await Firebase.initializeApp();
   }

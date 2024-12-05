@@ -590,7 +590,7 @@ class _DetalleWidgetState extends State<DetalleWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
@@ -620,7 +620,7 @@ class _DetalleWidgetState extends State<DetalleWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
@@ -650,7 +650,7 @@ class _DetalleWidgetState extends State<DetalleWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
@@ -680,7 +680,7 @@ class _DetalleWidgetState extends State<DetalleWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
@@ -710,7 +710,7 @@ class _DetalleWidgetState extends State<DetalleWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Poppins',
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),

@@ -179,7 +179,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     Duration(milliseconds: 500),
                                                 fadeOutDuration:
                                                     Duration(milliseconds: 500),
-                                                imageUrl: currentUserPhoto,
+                                                imageUrl:
+                                                    valueOrDefault<String>(
+                                                  currentUserPhoto,
+                                                  'CAESmANDZzVKYldGblpWOXhhMlJ1WVRZMFlSZ0hJbzRDTXNJQkNtNXdjbTlxWldOMGN5OXphRzl3Y0dsdVoyRndjQzFwYkhoc1pXOHZZWE56WlhSekwzUXljWEYwY3pBeU0yRnFZeS9pZ0pSUWJtZDBjbVZsNG9DVVkyRnlkRzl2Ymw5dFlXNWZZWFpoZEdGeVgzWmxZM1J2Y2w5cGJIVnpkSEpoZEdsdmJsODROVEUxTkRZekxuQnVaeEFDR0FNaUZnb0pDUUFBQUFBQUFFNUFFZ2tKQUFBQUFBQUFUa0FxTHdrQUFBQUFBQUJFUUJFQUFBQUFBQUJFUUJrQUFBQUFBQUJFUUNFQUFBQUFBQUJFUUNnQ01RQUFBQUFBQUVSQU1BRm85QU5hTHdrQUFBQUFBQUFBUUJFQUFBQUFBQUFBUUJrQUFBQUFBQUFBUUNFQUFBQUFBQUFBUURrQUFBQUFBQUFBUUVBQytnTUE4Z1FFQ2dJS0FQSUZDd2tBQUFBQUFBRHdQeG9BWWdDU0FRY3cyUDZDb2E4d3dnRUE=',
+                                                ),
                                                 width: 60.0,
                                                 height: 60.0,
                                                 fit: BoxFit.cover,

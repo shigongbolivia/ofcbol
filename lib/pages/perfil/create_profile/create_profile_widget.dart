@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -466,6 +467,15 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           if (user == null) {
                             return;
                           }
+
+                          await UsersRecord.collection
+                              .doc(user.uid)
+                              .update(createUsersRecordData(
+                                displayName:
+                                    _model.customerNameTextController.text,
+                                phoneNumber:
+                                    _model.customerPhoneTextController.text,
+                              ));
 
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
