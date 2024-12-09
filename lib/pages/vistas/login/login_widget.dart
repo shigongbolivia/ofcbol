@@ -335,50 +335,46 @@ class _LoginWidgetState extends State<LoginWidget>
                                   ).animateOnPageLoad(animationsMap[
                                       'textOnPageLoadAnimation2']!),
                                 ),
-                                FFButtonWidget(
-                                  onPressed: () async {
-                                    GoRouter.of(context).prepareAuthEvent();
-
-                                    final user =
-                                        await authManager.signInWithEmail(
-                                      context,
-                                      _model.customerEmailTextController.text,
-                                      _model
-                                          .customerPasswordTextController.text,
-                                    );
-                                    if (user == null) {
-                                      return;
-                                    }
-
-                                    context.goNamedAuth(
-                                        'Catalog', context.mounted);
-                                  },
-                                  text: 'Inicia sesión ahora',
-                                  options: FFButtonOptions(
-                                    width: 230.0,
-                                    height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Colors.white,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
-                                ),
                               ],
+                            ),
+                            FFButtonWidget(
+                              onPressed: () async {
+                                GoRouter.of(context).prepareAuthEvent();
+
+                                final user = await authManager.signInWithEmail(
+                                  context,
+                                  _model.customerEmailTextController.text,
+                                  _model.customerPasswordTextController.text,
+                                );
+                                if (user == null) {
+                                  return;
+                                }
+
+                                context.goNamedAuth('Catalog', context.mounted);
+                              },
+                              text: 'Inicia sesión ahora',
+                              options: FFButtonOptions(
+                                width: 230.0,
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -472,11 +468,6 @@ class _LoginWidgetState extends State<LoginWidget>
                             ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Column(
@@ -552,6 +543,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                       'textOnPageLoadAnimation3']!),
                                 ),
                               ),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [],
                             ),
                           ].divide(SizedBox(height: 10.0)),
                         ),
